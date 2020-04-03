@@ -6,7 +6,7 @@
  *Time: 17:04
  */
 
-namespace app\common\model;
+namespace app\common\model\mysql;
 
 
 use think\Model;
@@ -42,4 +42,6 @@ class AdminUser extends Model
         ];
         $this->where($where)->save($data);
     }
+
+
 }

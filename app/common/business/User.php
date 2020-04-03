@@ -41,7 +41,7 @@ class User
                 'phone_number' => $data['phone_number'],
                 'username' => $username,
                 'type' => $data['type'],
-                'status' => config('status.mysql.user_normal'),
+                'status' => config('status.mysql.table_normal'),
             ];
             try{
                 $this->userObj->save($userData);
@@ -83,7 +83,7 @@ class User
      */
     public function getNormalUserById($id){
         $user = $this->userObj->getUserById($id);
-        if(!$user || $user->status != config('status.mysql.user_normal')){
+        if(!$user || $user->status != config('status.mysql.table_normal')){
             return false;
         }
         return $user->toArray();

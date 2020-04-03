@@ -19,13 +19,16 @@ class Sms
         $code = Num::getCode($len);
 
         $type = ucfirst($type);
+
         //工厂模式
 //        $class =  "app\common\lib\sms\\".$type."Sms";
 //        $sms = $class::sendCode($phone , $code);
 
         //1.再对接一个短信平台  2.短信到的流量控制  20%=>阿里云 80%=>百度云
         $classStat = classArr::SmsClassStat();
+
         $classObj = classArr::initClass($type,$classStat);
+
         $sms = $classObj::sendCode($phone,$code);
         if($sms){
             cache(config('redis.code_pre').$phone, $code,config('redis.code_expire'));

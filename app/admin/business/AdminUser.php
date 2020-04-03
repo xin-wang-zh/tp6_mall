@@ -53,7 +53,7 @@ class AdminUser
         $AdminUserObj = new AdminUserModel();
         $AdminUser = $AdminUserObj->getAdminUserByusername($username);
         //判断用户是否存在
-        if(empty($AdminUser) || $AdminUser->status != config("status.mysql.user_normal")){
+        if(empty($AdminUser) || $AdminUser->status != config("status.mysql.table_normal")){
             return false;
         }
         return $AdminUser;

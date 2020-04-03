@@ -50,7 +50,7 @@ class User extends AuthBase
         if($result){
            cache(config('redis.token_pre').$this->token, $redisData,Time::userLoginExpireTime(2));
         }
-        return show(config('status.success'),'ok');
+        return show(config('status.success'),'修改成功');
     }
 
 

@@ -26,7 +26,7 @@ class Sms extends BaseController
         }
 
         //调用business层方法
-        if(BusiSms::sendCode($phoneNumber,4,$type='BaiDu')){
+        if(BusiSms::sendCode($phoneNumber,4,$type='Ali')){
             return  show(config('status.success'),"短信发送成功");
         }else{
             return  show(config('status.error'),"短信发送失败");

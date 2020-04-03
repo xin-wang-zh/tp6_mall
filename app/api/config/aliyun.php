@@ -8,7 +8,7 @@
 
 return [
     "host" => "dysmsapi.aliyuncs.com",
-    "accessKeyId" => 'LTAI005fVWKG2Qxr',
+    "accessKeyId" => '',
     "accessSecret" => "",
     "regionId" =>"cn-hangzhou",
     "SignName"=>"为未来而努力",

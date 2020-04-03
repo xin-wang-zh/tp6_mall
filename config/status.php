@@ -15,8 +15,8 @@ return [
     "controller_not_found" => -4,
 
     "mysql"=>[
-        "user_normal" => 1,
-        "user_pending" => -1,
-        "user_delete" =>99,
+        "table_normal" => 1,
+        "table_pending" => 0,
+        "table_delete" =>99,
     ]
 ];

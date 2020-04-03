@@ -19,10 +19,9 @@ class Login extends AdminBase
     //1.判断是否登陆
     public function initialize()
     {
-//        if($this->isLogin()){
-//            return $this->redirect(url('index/index'));
-//           // return redirect(Url('/admin/index/index'));
-//        }
+        if($this->isLogin()){
+            //return $this->redirect(url('index/index'));
+        }
     }
 
     //2.用中间件判断是否登陆

@@ -13,16 +13,15 @@ class Auth
 {
     public function handle($request, \Closure $next)
     {
-        $arr = ['Login','Verify','Logout'];
-
-        if(empty(session(config("admin.admin_session"))) &&  !preg_match("/[login|Verify|Logout]/", $request->pathInfo())){
-
+        if(empty(session(config("admin.admin_session"))) &&  !preg_match("/login|verify/", $request->pathInfo())){
             return redirect(url('/admin/login/index'));
         }
 
-//        if(!empty(session(config("admin.admin_session"))) &&  preg_match("/login/", $request->pathInfo())){
-//            return redirect(url('/admin/index/index'));
-//        }
+        if(!empty(session(config("admin.admin_session"))) &&  preg_match("/login/", $request->pathInfo())){
+
+            return redirect(url('/admin/index/index'));
+        }
+
         //前置中间件
         $response =  $next($request);
         //后置中间件
